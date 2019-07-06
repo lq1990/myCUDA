@@ -126,7 +126,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <CudaCompile Include="Client.cu" />
+    <CudaCompile Include="cuBLAS_study.cu" />
     <CudaCompile Include="go.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cuBLAS_study.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
