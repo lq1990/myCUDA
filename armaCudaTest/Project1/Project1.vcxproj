@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{766FF537-DC0B-4D21-AE2B-435E52A2487E}</ProjectGuid>
-    <RootNamespace>cudaTest</RootNamespace>
+    <ProjectGuid>{96BBCD7B-51D4-44EB-BCA8-89AD0085F494}</ProjectGuid>
+    <RootNamespace>Project1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\myGithub\myCUDA\cudaTest\include;C:\ProgramData\NVIDIA Corporation\CUDA Samples\v9.0\common\inc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\myGithub\myCUDA\cudaTest\lib;C:\ProgramData\NVIDIA Corporation\CUDA Samples\v9.0\common\lib\x64;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\ProgramData\NVIDIA Corporation\CUDA Samples\v9.0\common\inc;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\include;D:\myGithub\myCUDA\armaCudaTest\Project1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\ProgramData\NVIDIA Corporation\CUDA Samples\v9.0\common\lib\x64;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib\x64;D:\myGithub\myCUDA\armaCudaTest\Project1\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -90,12 +90,9 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(CUDA_PATH_V9_0)\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>blas_win64_MT.lib;lapack_win64_MT.lib;cublas.lib;cublas_device.lib;cuda.lib;cudadevrt.lib;cudart.lib;cudart_static.lib;cufft.lib;cufftw.lib;curand.lib;cusolver.lib;cusparse.lib;nppc.lib;nppial.lib;nppicc.lib;nppicom.lib;nppidei.lib;nppif.lib;nppig.lib;nppim.lib;nppist.lib;nppisu.lib;nppitc.lib;npps.lib;nvblas.lib;nvcuvid.lib;nvgraph.lib;nvml.lib;nvrtc.lib;OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(CUDA_PATH_V9_0)\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
-    <CudaCompile>
-      <CodeGeneration>compute_60,sm_60;%(CodeGeneration)</CodeGeneration>
-    </CudaCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -126,12 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CudaCompile Include="Client.cpp" />
-    <CudaCompile Include="cuBLAS_study.cu" />
-    <CudaCompile Include="go.cu" />
+    <CudaCompile Include="cudaRun.cu">
+      <FileType>Document</FileType>
+    </CudaCompile>
+    <ClCompile Include="源.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cuBLAS_study.h" />
+    <CudaCompile Include="cudaRun.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

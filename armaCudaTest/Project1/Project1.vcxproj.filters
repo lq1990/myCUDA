@@ -15,18 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="go.cu">
+    <ClCompile Include="源.cpp">
       <Filter>源文件</Filter>
-    </CudaCompile>
-    <CudaCompile Include="Client.cpp">
+    </ClCompile>
+    <ClCompile Include="cudaRun.cu">
       <Filter>源文件</Filter>
-    </CudaCompile>
-    <CudaCompile Include="cuBLAS_study.cu">
-      <Filter>源文件</Filter>
-    </CudaCompile>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cuBLAS_study.h">
+    <ClInclude Include="cudaRun.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

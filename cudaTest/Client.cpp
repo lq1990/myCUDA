@@ -1,8 +1,27 @@
 ﻿#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 #include "cuBLAS_study.h"
+#include <armadillo>
+#include <iostream>
 
+using namespace arma;
+using namespace std;
+
+void armaCompute()
+{
+	clock_t t_begin, t_end;
+	t_begin = clock();
+	// ================================
+
+	cout << arma::arma_version::as_string() << endl;
+
+	// ================================
+	t_end = clock();
+	double dt = (double)(t_end - t_begin) / CLOCKS_PER_SEC;
+	printf("===================================\n");
+	printf("arma, time needed: %f\n", dt);
+}
 
 int main()
 {
@@ -15,10 +34,11 @@ int main()
 	t_begin = clock();
 
 	// fn
-	cublas_demo();
+	armaCompute();
+	//cudaCompute();
 
 	t_end = clock();
-	printf("\n==========================================\ngpu, time needed: %lf s\n",
+	printf("\n==========================================\ntime needed: %lf s\n",
 		(double)(t_end - t_begin) / CLOCKS_PER_SEC);
 
 	// shmem_scan: 0.633s, 0.457s, 0.488s
